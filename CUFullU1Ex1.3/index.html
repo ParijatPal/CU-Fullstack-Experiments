@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light-theme">
+  <div class="dashboard">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Users</a>
+        <a href="#">Reports</a>
+        <a href="#">Settings</a>
+      </nav>
+      <button id="themeToggle">Toggle Theme</button>
+    </aside>
+    
+    <!-- Header -->
+    <header class="header">
+      <h1>Welcome, Parijat</h1>
+      <div class="profile-info">
+        <span>🔒 Admin</span>
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Cards -->
+      <div class="card">
+        <h3>📈 Website Traffic</h3>
+        <p>32,000 visits this month</p>
+      </div>
+      <div class="card">
+        <h3>👥 Active Users</h3>
+        <p>1,245 users online</p>
+      </div>
+      <div class="card">
+        <h3>💬 New Messages</h3>
+        <p>87 unread messages</p>
+      </div>
+      <div class="card">
+        <h3>⚙️ System Health</h3>
+        <p>All systems operational</p>
+      </div>
+
+      <!-- Recent Activities -->
+      <div class="card" style="grid-column: span 2;">
+        <h3>🕒 Recent Activities</h3>
+        <ul style="text-align: left; margin-top: 10px; line-height: 1.6;">
+          <li>🔹 User John updated profile</li>
+          <li>🔹 New report generated</li>
+          <li>🔹 Admin logged in at 10:45 AM</li>
+          <li>🔹 New user registered: Alice</li>
+        </ul>
+      </div>
+
+      <!-- Admin Profile Summary -->
+      <div class="card" style="grid-column: span 2;">
+        <h3>👤 Admin Profile</h3>
+        <p>Name: Parijat Pal</p>
+        <p>Role: Super Admin</p>
+        <p>Email: parijat@cumail.com</p>
+        <p>Status: ✅ Active</p>
+      </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Parijat Finance Bank Dashboard. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
