@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Product Filter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Dynamic Product Filter</h1>
+      <p>Choose a category to instantly filter products.</p>
+    </header>
+
+    <section class="controls">
+      <label for="category" class="label">Filter by Category</label>
+      <select id="category" class="select">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+        <option value="books">Books</option>
+      </select>
+    </section>
+
+    <section id="productList" class="product-list" aria-live="polite">
+      <!-- Products injected here by JS -->
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
