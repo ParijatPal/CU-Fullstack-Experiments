@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive SVG Drawing Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="toolbar" role="toolbar" aria-label="Drawing toolbar">
+      <div class="group" id="tools">
+        <button data-tool="pen" class="active" title="Freehand (P)">✏️ Pen</button>
+        <button data-tool="line" title="Line (L)">／ Line</button>
+        <button data-tool="rect" title="Rectangle (R)">▭ Rect</button>
+        <button data-tool="circle" title="Circle (C)">◯ Circle</button>
+      </div>
+      <div class="group">
+        <label>Stroke <input type="color" id="strokeColor" value="#ffffff"/></label>
+        <label>Fill <input type="color" id="fillColor" value="#00000000"/></label>
+        <label>Width <input type="number" id="strokeWidth" min="1" max="40" value="3" style="width:64px;"/></label>
+      </div>
+      <div class="group">
+        <button id="undo" title="Undo (Ctrl+Z)">↶ Undo</button>
+        <button id="redo" title="Redo (Ctrl+Y)">↷ Redo</button>
+        <button id="clear" title="Clear all">🗑️ Clear</button>
+      </div>
+      <div class="group">
+        <button id="download" title="Download SVG">⬇️ Download</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="stageWrap">
+      <svg id="stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-label="Drawing canvas">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <rect width="40" height="40" fill="none" stroke="#1f2937" stroke-width="1"/>
+            <path d="M20 0 V40 M0 20 H40" stroke="#172033" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+        <g id="layer"></g>
+      </svg>
+      <div class="hud" id="hud">Tool: Pen • Points: 0 <span class="hint">(Hold Shift to constrain)</span></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
