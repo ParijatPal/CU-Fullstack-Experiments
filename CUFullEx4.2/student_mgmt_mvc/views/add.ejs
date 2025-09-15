@@ -1,0 +1,14 @@
+<% include('layout') %>
+
+<form action="/students" method="POST" class="form">
+  <label>Name</label>
+  <input name="name" required />
+  <label>Roll</label>
+  <input name="roll" required />
+  <label>Age</label>
+  <input name="age" type="number" />
+  <label>Course</label>
+  <input name="course" />
+  <button type="submit" class="btn">Create</button>
+  <a href="/" class="btn secondary">Cancel</a>
+</form>

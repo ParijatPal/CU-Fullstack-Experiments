@@ -1,0 +1,30 @@
+<% include('layout') %>
+
+<div class="actions">
+  <a href="/students/add" class="btn">Add Student</a>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Name</th><th>Roll</th><th>Age</th><th>Course</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    <% if (students.length === 0) { %>
+      <tr><td colspan="5">No students found.</td></tr>
+    <% } %>
+    <% students.forEach(s => { %>
+      <tr>
+        <td><%= s.name %></td>
+        <td><%= s.roll %></td>
+        <td><%= s.age || '-' %></td>
+        <td><%= s.course || '-' %></td>
+        <td>
+          <a href="/students/<%= s._id %>/edit">Edit</a>
+          <form action="/students/<%= s._id %>?_method=DELETE" method="POST" style="display:inline">
+            <button type="submit" onclick="return confirm('Delete this student?')">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

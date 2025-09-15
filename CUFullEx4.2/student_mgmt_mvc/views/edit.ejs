@@ -1,0 +1,14 @@
+<% include('layout') %>
+
+<form action="/students/<%= student._id %>?_method=PUT" method="POST" class="form">
+  <label>Name</label>
+  <input name="name" value="<%= student.name %>" required />
+  <label>Roll</label>
+  <input name="roll" value="<%= student.roll %>" required />
+  <label>Age</label>
+  <input name="age" type="number" value="<%= student.age %>" />
+  <label>Course</label>
+  <input name="course" value="<%= student.course %>" />
+  <button type="submit" class="btn">Update</button>
+  <a href="/" class="btn secondary">Cancel</a>
+</form>
